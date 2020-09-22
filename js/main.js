@@ -57,7 +57,7 @@ $("#product").change(function() {
 				vals = main_val.Shirts.split(",");
 				break;
            case 'Product':
-               vals=[];
+               vals=['Brand'];
                break;
 			default:
 				vals = ['Brand'];
