@@ -1,8 +1,8 @@
 var main_val = {
   "Food": "Product, Coffee, Ice Cream",
   "Clothing": "Product, Pants, Shirts",
-  "Coffee": "Brand, Coffe Day, StarBucks",
-  "IceCream": "Brand, Cream Stone, Baskin and Robin",
+  "Coffee": "Brand, Coffee Day, StarBucks",
+  "IceCream": "Brand, Cream Stone, Baskin and Robins",
   "Pants": "Brand, Louis Phillipe, Peter England",
   "Shirts": "Brand, Polo, Marco",
 }
