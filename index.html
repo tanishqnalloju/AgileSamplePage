@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+
+ <link rel="stylesheet" type="text/css" href="css/styles.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+ 
+
+ 
+ 
+ <div class="topnav">
+  <div style= "flex-basis : 100px"> <a href="#home">Menu</a> </div>  
+   <span class="dot"></span> 
+  <div style="flex-basis: 1000px"> <a href="#username">User Name</a> </div>
+  <div style="flex-basis: 500px">  <a href="#salesreport">Sales Report</a> </div>
+</div>
+
+ 
+ 
+ 
+<br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+
+ 
+ 
+<div class="options">
+
+<div class="option">
+ <select id="categoryType">
+     <option>Category</option>
+     <option>Food</option>
+     <option>Clothing</option>
+ </select>
+ </div>
+ 
+<div class="option">
+    <select id="product">
+     <option>Product</option>
+ </select>
+ </div>
+
+<div class="option">
+    <select id="brand">
+     <option>Brand</option>
+ </select>
+ </div>
+
+</div>
+ 
+</head>
+
+<body>
+
+<!--<canvas id="chart" style="position: relative;" height:"50"; width:"50"></canvas>-->
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Sales by month"
+	},
+	axisY: {
+		title: "Sales"
+	},
+	data: [{        
+		type: "column",
+        color: "#77B2F1",
+		showInLegend: true, 
+		legendMarkerColor: "#77B2F1",
+		legendText: "sales",
+		dataPoints: [      
+			{ y: 23, label: "January" },
+			{ y: 26,  label: "February" },
+			{ y: 56,  label: "March" },
+			{ y: 33,  label: "April" },
+		]
+	}]
+});
+chart.render();
+ 
+ $("#brand").change(function () {
+
+	var $dropdown = $(this);
+ 
+    var key = $dropdown.val();
+    var vals = []
+ 
+		switch(key) {
+			case 'Coffee Day':
+				vals = month_sales.CoffeeD
+				break;
+			case 'Star Bucks':
+				vals = month_sales.StarB;
+                break;
+			case 'Cream Stone':
+				vals = month_sales.CreamStone;
+				break;
+			case 'Baskin and Robins':
+				vals = month_sales.BaskinAR;
+				break;    
+			case 'Louis Phillipe':
+				vals = month_sales.LP;
+				break;
+			case 'Peter England':
+				vals = month_sales.PeterE;
+				break;
+			case 'Polo':
+				vals = month_sales.Polo;
+				break;
+			case 'Marco':
+				vals = month_sales.Marco;
+				break;           
+			default:
+				[      
+			{ y: 34, label: "January" },
+			{ y: 56,  label: "February" },
+			{ y: 16,  label: "March" },
+			{ y: 43,  label: "April" },
+		];
+		}
+ 
+    chart.options.data[0].dataPoints = vals;
+    chart.render();
+});
+
+}
+
+
+
+
+//Support for Chart.js
+//
+//
+//var ctx = document.getElementById('chart').getContext('2d');
+//var myChart = new Chart(ctx, {
+//    type: 'bar',
+//    data: {
+//        labels: ['Red', 'Blue', 'Yellow', 'Green',],
+//        datasets: [{
+//            label: '# of Votes',
+//            data: [3, 4, 3, 5,],
+//            backgroundColor: [
+//                'rgba(149, 206, 255, 0.2)',
+//                'rgba(149, 206, 255, 0.2)',
+//                'rgba(149, 206, 255, 0.2)',
+//                'rgba(149, 206, 255, 0.2)',
+//            ],
+//            borderColor: [
+//                'rgba(12, 12, 12, 1)',
+//             'rgba(12, 12, 12, 1)',
+//             'rgba(12, 12, 12, 1)',
+//             'rgba(12, 12, 12, 1)',
+//            ],
+//            borderWidth: 1
+//        }]
+//    },
+//    options: {
+//        scales: {
+//            yAxes: [{
+//                ticks: {
+//                    beginAtZero: false
+//                }
+//            }]
+//        }
+//    }
+//});
+//
+//
+//chart.canvas.parentNode.style.height = '128px';
+//chart.canvas.parentNode.style.width = '128px';
+ 
+ 
+</script>
+<br>
+ <br>
+ <br>
+ 
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+ <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- <script src="js/jquery-3.2.1.min.js"></script>-->
+
+ 
+</body> 
+</html>
+
+
